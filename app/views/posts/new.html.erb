@@ -1,0 +1,53 @@
+<div id="map" style="height: 400px;"></div>
+
+<%= form_with(model: @post, local: true) do |f| %>  
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.label :type %>
+  <%= f.select :type, Post.types.keys.map {|k| [k, k]} %>
+  
+  <%= f.label :"地域" %>
+  <%= f.select :name, Area.names.keys.map {|k| [k, k]} %>
+
+  <%= f.label :latitude %>
+  <%= f.text_field :latitude, id: 'latitude' %>
+
+  <%= f.label :longitude %>
+  <%= f.text_field :longitude, id: 'longitude' %> 
+  
+  <%= f.submit "Create new post" %>
+<% end %>
+
+<script>
+  // Geolocation APIを使用して緯度と経度を取得し、フォームに設定するJavaScript
+  document.addEventListener('DOMContentLoaded', function() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        document.getElementById('latitude').value = position.coords.latitude;
+        document.getElementById('longitude').value = position.coords.longitude;
+      });
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        },
+        zoom: 15
+      });
+  
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
+  });
+</script>
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap"  
+    async defer>
+</script>
+
+
+

@@ -1,0 +1,11 @@
+<h1>詳細</h1>
+<p><%= t('view.post_name') %> : <%= @post.title %></p>
+<p><%= t('view.content') %> : <%= @post.content %></p>
+<p><%= t('view.type') %> : <%= @post.type %></p>
+<p><%= t('view.area_name') %> : <%= @post.area.name %></p>
+<p><%= t('view.created_at') %> : <%= @post.created_at %></p>
+
+
+<%= link_to t('view.index'), posts_path %>
+<%# link_to t('view.user_detail'), user_path(@post.user_id) %>
+

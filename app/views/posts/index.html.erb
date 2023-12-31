@@ -1,0 +1,29 @@
+<div>
+ <table>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+      <th>カテゴリー</th>
+      <th>地域</th>
+      <th>発生時刻</th>
+      <th>投稿者</th>
+
+    </tr>
+
+    <% @posts.each do |post| %>
+      <tr class="post_list">
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= post.type %></td>
+      <td><%= post.area.name %></td>
+      <td><%= post.created_at %></td>
+      <td><%= post.user.name %></td>
+
+      <td><%= link_to t('view.post_detail'), post_path(post.id) %></td>
+      <td><%#= link_to t('view.edit'), edit_task_path(task.id), class: "btn btn-success " %></td>
+      <td><%#= link_to t('view.destroy'), task_path(task.id), class: "btn btn-warning", method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+      
+      </tr>
+    <% end %>
+  </table>
+</div>

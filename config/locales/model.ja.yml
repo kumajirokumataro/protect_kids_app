@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+      user: ユーザー
+      area: 地域
+    attributes:
+      post:
+        title: タイトル
+        content: 内容
+        type: 情報種類
+        latitude: 緯度
+        longitude: 経度
+      user:
+        name: 名前
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
+        gender: 性別
+        age: 年代
+        nickname: ニックネーム 
+        self_introduction: 自己紹介
+        admin: 管理者権限
+      area:
+        name: 地域名
+      
