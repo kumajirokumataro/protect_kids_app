@@ -1,0 +1,44 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with(model: @user, local: true) do |f| %>  
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.label :nickname %>
+  <%= f.text_field :nickname %>
+
+  <%= f.label :"地域" %>
+    <% Area.all.each do |area| %>
+      <%= f.check_box :area_ids, { multiple: true, checked: area[:checked], disabled: area[:disabled], include_hidden: false }, area[:id] %>
+      <%= area.name %>
+    <% end %>
+  
+  <%= f.label :gender %>
+  <%= f.select :gender, User.genders.keys.map {|k| [k, k]} %>
+
+  <%= f.label :"年齢" %>
+  <%= f.select :age, User.ages.keys.map {|k| [k, k]} %>
+  
+  <%= f.label :self_introduction %>
+  <%= f.text_field :self_introduction %>
+
+  <%= f.submit "Create my account" %>
+<% end %>

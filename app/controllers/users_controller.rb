@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   #before_action :not_currentuser_notadmin_path, {only: [:show, :edit]}
   #destroyとupdateは入れるべきか？
   skip_before_action :login_required, only: [:new, :create]
+  before_action :not_users_new_if_logged_in, only: [:new]
 
   def new
     @user = User.new
@@ -16,13 +17,30 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    binding.pry
+    @user = User.find(params[:id])
+    @user.update!(user_params)
+    redirect_to posts_path 
+    flash[:notice] = '編集しました！'
+  end
   
   def show
     @user = User.find(params[:id])
-    #@tasks = @user.tasks.all.order(created_at: "DESC")
   end
 
   private
+
+  def not_users_new_if_logged_in
+    redirect_to posts_path if logged_in?
+    flash[:notice] = '既にログインしています'
+  end
+    
 
     #def not_currentuser_notadmin_newpath
       #if current_user && current_user.admin == false

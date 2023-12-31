@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  skip_before_action :login_required, only: [:index, :show]
+  before_action :not_edit, only: [:edit]
+
     def index
       @posts = Post.all
       #if params[:task].present?
@@ -87,6 +90,10 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :content, :type, :latitude, :longitude)
     end
-    
 
+    def not_edit
+      if current_user && current_user.admin == false
+        redirect_to posts_path, notice:"編集できません！"
+      end
+    end 
 end
