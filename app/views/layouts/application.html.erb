@@ -11,6 +11,30 @@
   </head>
 
   <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+
+    <% if logged_in? && current_user.admin %>
+      <%= link_to t('view.mypage'), user_path(current_user.id) %>
+      <%# link_to t('view.freepost_index'), posts_path %>
+      <%= link_to t('view.dangerpost_index'), posts_path %>
+      <%# link_to t('view.information_map'), posts_path %>
+      <%# link_to t('view.admin_view'), session_path(current_user.id) %>
+      <%= link_to t('view.logout'), session_path(current_user.id), method: :delete %>      
+    <% elsif logged_in? %>
+      <%= link_to t('view.mypage'), user_path(current_user.id) %>
+      <%# link_to t('view.freepost_index'), posts_path %>
+      <%= link_to t('view.dangerpost_index'), posts_path %>
+      <%# link_to t('view.information_map'), posts_path %>
+      <%= link_to t('view.logout'), session_path(current_user.id), method: :delete %>
+    <% else %>
+      <%= link_to t('view.signup'), new_user_path %>
+      <%= link_to t('view.login'), new_session_path %>
+      <%# link_to t('view.freepost_index'), posts_path %>
+      <%= link_to t('view.dangerpost_index'), posts_path %>
+      <%# link_to t('view.information_map'), posts_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

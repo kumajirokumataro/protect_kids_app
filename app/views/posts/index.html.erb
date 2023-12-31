@@ -1,13 +1,11 @@
 <div>
  <table>
     <tr>
-      <th>タイトル</th>
-      <th>内容</th>
-      <th>カテゴリー</th>
-      <th>地域</th>
-      <th>発生時刻</th>
-      <th>投稿者</th>
-
+      <th><%= t('view.post_name') %></th>
+      <th><%= t('view.content') %></th>
+      <th><%= t('view.type') %></th>
+      <th><%= t('view.created_at') %></th>
+      <th><%= t('view.nickname') %></th>
     </tr>
 
     <% @posts.each do |post| %>

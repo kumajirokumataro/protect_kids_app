@@ -7,6 +7,9 @@ ja:
     content: 内容
     user_detail: ユーザー詳細
     post_detail: 投稿詳細
+    dangerpost_index:  危険投稿一覧
+    freepost_index: 自由投稿一覧
+    information_map: 情報マップ
     edit: 編集
     destroy: 削除
     new_post: 新規投稿
@@ -17,10 +20,16 @@ ja:
     password: パスワード
     gender: 性別
     age: 年代
-    nickname: ニックネーム
+    nickname: 投稿者
     self_introduction: 自己紹介
     admin: 管理者権限
+    admin_view: 管理者用
     created_at: 発生時刻
+    back: 戻る
+    mypage: マイページ
+    logout: ログアウト
+    login: ログイン
+    signup: アカウント登録
   activerecord:
     errors:
       messages:
