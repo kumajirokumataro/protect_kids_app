@@ -1,6 +1,7 @@
 ---
 ja:
   view:
+    toppage: トップページ
     index: 一覧
     post_name: タイトル
     area_name: 地域名

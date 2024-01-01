@@ -1,4 +1,7 @@
 <div>
+<% if current_user %>
+  <%= link_to t('view.new_post'), new_post_path %>
+<% end %>
  <table>
     <tr>
       <th><%= t('view.post_name') %></th>

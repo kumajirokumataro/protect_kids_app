@@ -25,7 +25,7 @@
   <%= f.label :nickname %>
   <%= f.text_field :nickname %>
 
-  <%= f.label :"地域" %>
+  <%= f.label :name %>
     <% Area.all.each do |area| %>
       <%= f.check_box :area_ids, { multiple: true, checked: area[:checked], disabled: area[:disabled], include_hidden: false }, area[:id] %>
       <%= area.name %>
@@ -34,7 +34,7 @@
   <%= f.label :gender %>
   <%= f.select :gender, User.genders.keys.map {|k| [k, k]} %>
 
-  <%= f.label :"年齢" %>
+  <%= f.label :age %>
   <%= f.select :age, User.ages.keys.map {|k| [k, k]} %>
   
   <%= f.label :self_introduction %>
