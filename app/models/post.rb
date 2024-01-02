@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :area
   belongs_to :user
+  has_many :comments, dependent: :destroy
   validates :title, :type, :latitude, :longitude, presence: true
   validates :title, length: { maximum: 100 }
   validates :content, length: { maximum: 200 }

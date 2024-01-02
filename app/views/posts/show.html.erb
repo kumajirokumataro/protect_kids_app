@@ -1,9 +1,22 @@
 <h1><%= t('view.post_detail') %></h1>
-<p><%= t('view.post_name') %> : <%= @post.title %></p>
-<p><%= t('view.content') %> : <%= @post.content %></p>
-<p><%= t('view.type') %> : <%= @post.type %></p>
-<p><%= t('view.area_name') %> : <%= @post.area.name %></p>
-<p><%= t('view.created_at') %> : <%= @post.created_at %></p>
+<div class="post-text">
+  <p><%= t('view.post_name') %> : <%= @post.title %></p>
+  <p><%= t('view.content') %> : <%= @post.content %></p>
+  <p><%= t('view.type') %> : <%= @post.type %></p>
+  <p><%= t('view.area_name') %> : <%= @post.area.name %></p>
+  <p><%= t('view.created_at') %> : <%= @post.created_at %></p>
+</div>
+
+<p>コメント一覧</p>
+
+  <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+  <div id="comments_area">
+    <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+    <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
+  </div>
+
+  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+  <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
 
 
 <%= link_to t('view.index'), posts_path %>

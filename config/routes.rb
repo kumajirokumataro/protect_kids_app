@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get 'top/index'
   root 'top#index'
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
+
   #get "/" => "tasks#index"
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
