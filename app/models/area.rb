@@ -1,6 +1,7 @@
 class Area < ApplicationRecord
   has_many :selectings, dependent: :destroy
   has_many :users, through: :selectings
+  has_many :selecting_users, through: :selectings, source: :user
   has_many :posts
   validates :name, uniqueness: true
   enum name: { "常盤台": 0, "南常盤台": 1, "高島平": 2, "大門": 3, "四葉": 4, "徳丸": 5, "西台": 6, "蓮根": 7,

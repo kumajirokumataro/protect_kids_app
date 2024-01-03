@@ -54,13 +54,8 @@ class PostsController < ApplicationController
       @post = current_user.posts.build(post_params)
       @post.area_id = Area.find_by(name: params[:post][:name]).id
       
-      #@task = current_user.tasks.build(task_params)
-      #この上の1行は、この2行のこと
-      #@task = Task.new(task_params)
-      #@task.user_id = current_user.id 
-  
-        if @post.save!
-          binding.pry
+        if @post.save
+          ShareMailer.share_mail(@post).deliver 
           redirect_to posts_path, notice: "投稿を作成しました！"
         else
           render :new

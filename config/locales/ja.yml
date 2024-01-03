@@ -31,6 +31,10 @@ ja:
     logout: ログアウト
     login: ログイン
     signup: アカウント登録
+    exist: あります
+    dangerpost_share: あなたの登録地域で危険情報が投稿されました
+    click_to_confirm: 以下をクリックし確認して下さい。
+
   activerecord:
     errors:
       messages:
