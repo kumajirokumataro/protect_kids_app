@@ -23,7 +23,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
     @user = User.find(params[:id])
     @user.update!(user_params)
     redirect_to posts_path 
@@ -37,8 +36,12 @@ class UsersController < ApplicationController
   private
 
   def not_users_new_if_logged_in
-    redirect_to posts_path if logged_in?
-    flash[:notice] = '既にログインしています'
+    if logged_in?
+      redirect_to posts_path 
+      flash[:notice] = '既にログインしています'
+    #else
+      #flash[:notice] = 'アカウント登録画面です！'
+    end
   end
     
 

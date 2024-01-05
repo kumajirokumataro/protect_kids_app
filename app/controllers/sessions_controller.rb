@@ -18,15 +18,19 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    binding.pry
     session.delete(:user_id)
-    flash[:notice] = 'ログアウトしました'
-    redirect_to new_session_path
+    redirect_to new_session_path, notice: 'ログアウトしました'
   end
 
   private
 
   def not_sessions_new_if_logged_in
-    redirect_to posts_path if logged_in?
-    flash[:notice] = '既にログインしています' 
+    if logged_in?
+      redirect_to posts_path 
+      flash[:notice] = '既にログインしています' 
+    else
+      flash[:notice] = 'ログイン画面です！'
+    end
   end
 end
