@@ -1,6 +1,6 @@
-<h1>Log in</h1>
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-
+<h1><%=t('view.login')%></h1>
+<%= form_with(model: User.new, url: sessions_path, local: true) do |f| %>
+  <%# model: User.new %>
   <%= f.label :email %>
   <%= f.email_field :email %>
 
@@ -9,3 +9,9 @@
 
   <%= f.submit "Log in" %>
 <% end %>
+
+<h3><%=t('view.guest')%><%=t('view.login')%></h1>
+<%= form_with(scope: :guestsession, url: guestsessions_path ) do |f| %>
+  <%= f.submit "Log in" %>
+<% end %>
+
