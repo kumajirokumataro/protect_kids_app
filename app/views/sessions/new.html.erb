@@ -7,11 +7,16 @@
   <%= f.label :password %>
   <%= f.password_field :password %>
 
-  <%= f.submit "Log in" %>
+  <%= f.submit t('view.login') %>
 <% end %>
 
 <h3><%=t('view.guest')%><%=t('view.login')%></h1>
 <%= form_with(scope: :guestsession, url: guestsessions_path ) do |f| %>
-  <%= f.submit "Log in" %>
+  <%= f.submit t('view.login') %>
+<% end %>
+
+<h3><%=t('view.guest')%><%=t('view.admin_view')%><%=t('view.login')%></h1>
+<%= form_with(scope: :guestsession, url: guestsessions_admin_path ) do |f| %>
+  <%= f.submit t('view.login') %>
 <% end %>
 

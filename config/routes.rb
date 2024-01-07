@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   post '/guestsessions', to: 'guestsessions#new_guest'
+  post '/guestsessions/admin', to: 'guestsessions#new_admin_guest'
 
   #get "/" => "tasks#index"
   resources :sessions, only: [:new, :create, :destroy]
