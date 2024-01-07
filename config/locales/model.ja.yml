@@ -23,6 +23,7 @@ ja:
         nickname: ニックネーム 
         self_introduction: 自己紹介
         admin: 管理者権限
+        area_id: 地域名
       area:
         name: 地域名
       

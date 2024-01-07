@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   def not_admin_path
     if current_user.admin == false
       flash[:notice]="管理者以外はアクセスできません"
-      redirect_to posts_path
+      redirect_to main_app.root_path
     end
   end
 end

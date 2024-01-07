@@ -25,7 +25,7 @@
   <%= f.label :nickname %>
   <%= f.text_field :nickname, placeholder: t('view.enter_your_nickname') %>
 
-  <%= f.label :name %>
+  <%= f.label :area_id %>
     <% Area.all.each do |area| %>
       <%= f.check_box :area_ids, { multiple: true, checked: area[:checked], disabled: area[:disabled], include_hidden: false }, area[:id] %>
       <%= area.name %>
