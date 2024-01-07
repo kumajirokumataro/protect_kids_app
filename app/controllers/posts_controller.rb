@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   skip_before_action :login_required, only: [:index, :show]
   before_action :not_edit, only: [:edit]
+ 
 
     def index
       @posts = Post.all

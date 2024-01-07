@@ -11,19 +11,19 @@
 
 <%= form_with(model: @user, local: true) do |f| %>  
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, placeholder: t('view.enter_your_name') %>
 
   <%= f.label :email %>
-  <%= f.email_field :email %>
+  <%= f.email_field :email, placeholder: t('view.enter_your_email') %>
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password, placeholder: t('view.enter_your_password') %>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation, placeholder: t('view.enter_your_two_password') %>
 
   <%= f.label :nickname %>
-  <%= f.text_field :nickname %>
+  <%= f.text_field :nickname, placeholder: t('view.enter_your_nickname') %>
 
   <%= f.label :name %>
     <% Area.all.each do |area| %>
@@ -38,7 +38,7 @@
   <%= f.select :age, User.ages.keys.map {|k| [k, k]} %>
   
   <%= f.label :self_introduction %>
-  <%= f.text_field :self_introduction %>
+  <%= f.text_field :self_introduction, placeholder: t('view.enter_your_self_introduction') %>
 
   <%= f.submit "Create my account" %>
 <% end %>

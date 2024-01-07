@@ -35,6 +35,12 @@ ja:
     dangerpost_share: あなたの登録地域で危険情報が投稿されました
     click_to_confirm: 以下をクリックし確認して下さい。
     guest: ゲスト
+    enter_your_name: あなたの名前を入力して下さい
+    enter_your_email: あなたのEメールを入力して下さい
+    enter_your_password: あなたのパスワードを入力して下さい
+    enter_your_two_password: あなたのパスワードを入力して下さい
+    enter_your_nickname: あなたのユーザー名を入力して下さい。表示される名前となります。（例）くまたろう、
+    enter_your_self_introduction: （例）3歳と小学1年生の男の子のママです！とても元気で活発ですが、ケガしないか毎日ハラハラの日々です。
 
   activerecord:
     errors:

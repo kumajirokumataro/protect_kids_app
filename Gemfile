@@ -27,9 +27,9 @@ gem 'dotenv-rails'
 gem 'gon'
 gem 'geocoder'
 gem 'rexml'
-
-
-
+gem 'rails_admin', '~> 3.0'
+gem 'gimei'
+gem 'faker'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

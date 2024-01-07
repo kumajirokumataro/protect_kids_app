@@ -23,7 +23,7 @@
       <%# link_to t('view.freepost_index'), posts_path %>
       <%= link_to t('view.dangerpost_index'), posts_path %>
       <%# link_to t('view.information_map'), posts_path %>
-      <%# link_to t('view.admin_view'), session_path(current_user.id) %>
+      <%= link_to t('view.admin_view'), rails_admin_path %>
       <%= link_to t('view.logout'), session_path(current_user.id), method: :delete %>      
     <% elsif logged_in? %>
       <%= link_to t('view.toppage'), top_index_path %>
