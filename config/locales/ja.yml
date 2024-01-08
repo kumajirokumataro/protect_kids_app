@@ -24,6 +24,7 @@ ja:
     nickname: 投稿者
     self_introduction: 自己紹介
     admin: 管理者権限
+    target_child_age: 対象子ども年齢
     admin_view: 管理者用
     created_at: 発生時刻
     back: 戻る
@@ -41,7 +42,7 @@ ja:
     enter_your_two_password: あなたのパスワードを入力して下さい
     enter_your_nickname: あなたのユーザー名を入力して下さい。表示される名前となります。（例）くまたろう、
     enter_your_self_introduction: （例）3歳と小学1年生の男の子のママです！とても元気で活発ですが、ケガしないか毎日ハラハラの日々です。
-
+    create_new_post: 新規投稿する
   activerecord:
     errors:
       messages:

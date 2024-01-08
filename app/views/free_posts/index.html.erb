@@ -1,0 +1,29 @@
+<div>
+<% if current_user %>
+  <%= link_to t('view.new_post'), new_free_post_path %>
+<% end %>
+ <table>
+    <tr>
+      <th><%= t('view.title') %></th>
+      <th><%= t('view.content') %></th>
+      <th><%= t('view.type') %></th>
+      <th><%= t('view.target_child_age') %></th>
+      <th><%= t('view.nickname') %></th>
+    </tr>
+
+    <% @freeposts.each do |post| %>
+      <tr class="post_list">
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= post.group %></td>
+      <td><%= post.target_child_age %></td>
+      <td><%= post.user.nickname %></td>
+
+      <td><%= link_to t('view.post_detail'), free_post_path(post.id) %></td>
+      <% if current_user && current_user.id == post.user_id %>
+        <td><%= link_to t('view.edit'), edit_free_post_path(post.id) %></td>
+      <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>

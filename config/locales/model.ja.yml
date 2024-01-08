@@ -4,6 +4,7 @@ ja:
       post: 投稿
       user: ユーザー
       area: 地域
+      comment: コメント
     attributes:
       post:
         title: タイトル
@@ -11,6 +12,7 @@ ja:
         type: 情報種類
         latitude: 緯度
         longitude: 経度
+        area_id: 地域名
       user:
         name: 名前
         email: メールアドレス
@@ -26,4 +28,12 @@ ja:
         area_id: 地域名
       area:
         name: 地域名
+      comment:
+        content: 投稿者へメッセージコメント
+      free_post:
+        title: タイトル
+        content: 内容
+        kind: 情報種類
+        target_child_age: 子どもの年齢
+        
       

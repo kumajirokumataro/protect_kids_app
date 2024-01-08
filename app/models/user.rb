@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
+  has_many :free_posts, dependent: :destroy
   has_many :selectings, dependent: :destroy
   has_many :areas, through: :selectings
   validates :name, presence: true, length: { maximum: 40 }

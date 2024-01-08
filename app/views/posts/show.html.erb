@@ -4,7 +4,7 @@
   <p><%= t('view.content') %> : <%= @post.content %></p>
   <p><%= t('view.type') %> : <%= @post.type %></p>
   <p><%= t('view.area_name') %> : <%= @post.area.name %></p>
-  <p><%= t('view.created_at') %> : <%= @post.created_at %></p>
+  <p><%= t('view.created_at') %> : <%= @post.created_at.to_s(:datetime_jp) %></p>
 </div>
 <div id="map" style="height: 400px;"></div>
 
@@ -44,10 +44,6 @@
     src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap&v=weekly" 
     async defer>
 </script>
-
-
-
-
 
 <p>コメント一覧</p>
 

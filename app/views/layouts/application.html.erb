@@ -20,7 +20,7 @@
     <% if logged_in? && current_user.admin %>
       <%= link_to t('view.toppage'), top_index_path %>
       <%= link_to t('view.mypage'), user_path(current_user.id) %>
-      <%# link_to t('view.freepost_index'), posts_path %>
+      <%= link_to t('view.freepost_index'), free_posts_path %>
       <%= link_to t('view.dangerpost_index'), posts_path %>
       <%# link_to t('view.information_map'), posts_path %>
       <%= link_to t('view.admin_view'), rails_admin_path %>
@@ -28,7 +28,7 @@
     <% elsif logged_in? %>
       <%= link_to t('view.toppage'), top_index_path %>
       <%= link_to t('view.mypage'), user_path(current_user.id) %>
-      <%# link_to t('view.freepost_index'), posts_path %>
+      <%= link_to t('view.freepost_index'), free_posts_path %>
       <%= link_to t('view.dangerpost_index'), posts_path %>
       <%# link_to t('view.information_map'), posts_path %>
       <%= link_to t('view.logout'), session_path(current_user.id), method: :delete %>
@@ -36,7 +36,7 @@
       <%= link_to t('view.toppage'), top_index_path %>
       <%= link_to t('view.signup'), new_user_path %>
       <%= link_to t('view.login'), new_session_path %>
-      <%# link_to t('view.freepost_index'), posts_path %>
+      <%= link_to t('view.freepost_index'), free_posts_path %>
       <%= link_to t('view.dangerpost_index'), posts_path %>
       <%# link_to t('view.information_map'), posts_path %>
     <% end %>

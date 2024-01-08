@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyText
+  group: 1
+  target_child_age: 1
+  user: one
+
+two:
+  title: MyString
+  content: MyText
+  group: 1
+  target_child_age: 1
+  user: two

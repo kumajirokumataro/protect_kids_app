@@ -8,12 +8,10 @@ Rails.application.routes.draw do
   post '/guestsessions', to: 'guestsessions#new_guest'
   post '/guestsessions/admin', to: 'guestsessions#new_admin_guest'
 
-  #get "/" => "tasks#index"
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
-  #namespace :admin do
-    #resources :users
-  #end
+  resources :free_posts
+  
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -21,7 +21,7 @@
   <%= f.label :type %>
   <%= f.select :type, Post.types.keys.map {|k| [k, k]} %>
   
-  <%= f.label :"地域" %>
+  <%= f.label :area_id %>
   <%= f.select :name, Area.names.keys.map {|k| [k, k]} %>
 
   <%= f.label :latitude %>

@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module ProtectKidsApp
   class Application < Rails::Application
     config.action_mailer.default_url_options = { host: 'example.com' }
+    config.time_zone = 'Tokyo'
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
