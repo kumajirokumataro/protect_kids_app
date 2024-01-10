@@ -14,31 +14,32 @@
   <%= f.text_field :name, placeholder: t('view.enter_your_name') %>
 
   <%= f.label :email %>
-  <%= f.email_field :email, placeholder: t('view.enter_your_email') %>
+  <%= f.email_field :email, placeholder: t('view.enter_your_email') %><br>
 
   <%= f.label :password %>
   <%= f.password_field :password, placeholder: t('view.enter_your_password') %>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, placeholder: t('view.enter_your_two_password') %>
+  <%= f.password_field :password_confirmation, placeholder: t('view.enter_your_two_password') %><br>
 
   <%= f.label :nickname %>
   <%= f.text_field :nickname, placeholder: t('view.enter_your_nickname') %>
 
-  <%= f.label :area_id %>
+  <p><%= t('view.select_area') %></p>
+  <%= f.label :area_id %><br>
     <% Area.all.each do |area| %>
       <%= f.check_box :area_ids, { multiple: true, checked: area[:checked], disabled: area[:disabled], include_hidden: false }, area[:id] %>
-      <%= area.name %>
+      <%= area.name %><br>
     <% end %>
   
   <%= f.label :gender %>
   <%= f.select :gender, User.genders.keys.map {|k| [k, k]} %>
 
   <%= f.label :age %>
-  <%= f.select :age, User.ages.keys.map {|k| [k, k]} %>
+  <%= f.select :age, User.ages.keys.map {|k| [k, k]} %><br>
   
   <%= f.label :self_introduction %>
   <%= f.text_field :self_introduction, placeholder: t('view.enter_your_self_introduction') %>
 
-  <%= f.submit "Create my account" %>
+  <%= f.submit %>
 <% end %>

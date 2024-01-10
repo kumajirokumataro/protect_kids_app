@@ -2,6 +2,15 @@
 <% if current_user %>
   <%= link_to t('view.new_post'), new_free_post_path %>
 <% end %>
+
+<div class="searchbox">
+  <%= form_with scope: :search, url: free_posts_path, local: true, method: :get do |f| %>
+  <%= f.text_field :title, placeholder: "検索したい内容を記入してください。" %>
+  <%= f.select :target_child_age, FreePost.target_child_ages.keys.map {|k| [k, k]}, include_blank: "選択して下さい" %>
+  <%= f.submit "検索", class: "btn" %>
+  <% end %>
+</div>
+
  <table>
     <tr>
       <th><%= t('view.title') %></th>
@@ -15,7 +24,7 @@
       <tr class="post_list">
       <td><%= post.title %></td>
       <td><%= post.content %></td>
-      <td><%= post.group %></td>
+      <td><%= post.kind %></td>
       <td><%= post.target_child_age %></td>
       <td><%= post.user.nickname %></td>
 

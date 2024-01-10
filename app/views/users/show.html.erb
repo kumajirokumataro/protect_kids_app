@@ -5,9 +5,7 @@
 <p><%= t('view.age') %> : <%= @user.age %></p>
 <p><%= t('view.self_introduction') %> : <%= @user.self_introduction %></p>
 
-<% if logged_in? %>
-  <%= link_to t('view.edit'), edit_user_path(@user.id) %>
-  <%= link_to t('view.back'),posts_path %>
-<% else %>     
-  <%= link_to t('view.back'),posts_path %>
+<% if logged_in? && current_user == @user %>
+  <%= link_to t('view.edit'), edit_user_path(@user.id) %>     
 <% end %>
+<%= link_to t('view.back'),posts_path %>

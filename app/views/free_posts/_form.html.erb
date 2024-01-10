@@ -17,10 +17,10 @@
   <%= f.text_field :content %>
 
   <%= f.label :kind %>
-  <%= f.select :kind, Free_post.kinds.keys.map {|k| [k, k]} %>
+  <%= f.select :kind, FreePost.kinds.keys.map {|k| [k, k]} %>
   
   <%= f.label :target_child_age %>
-  <%= f.select :target_child_age, Free_post.target_child_ages.keys.map {|k| [k, k]} %>
+  <%= f.select :target_child_age, FreePost.target_child_ages.keys.map {|k| [k, k]} %>
   
   <%= f.submit %>
 <% end %>
