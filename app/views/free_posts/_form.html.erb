@@ -1,4 +1,4 @@
-<%= form_with(model: @freepost, local: true) do |f| %>
+<%= form_with(model: @freepost) do |f| %>
   <% if @freepost.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@freepost.errors.count, "error") %> <%= t('view.exist') %></h2>

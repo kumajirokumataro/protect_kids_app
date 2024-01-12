@@ -12,11 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
   </div>
-
+  <div id="comment_error">
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+ #, local: true

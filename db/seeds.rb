@@ -150,6 +150,33 @@
     target_child_age: 0,
     user_id: user_ids.shuffle.first
     )
+  
+    post_ids = Post.ids
+  Comment.create!(
+    content: "情報ありがとうございます！",
+    post_id: post_ids.shuffle.first
+    )
+  
+  Comment.create!(
+    content: "助かりました！",
+    post_id: post_ids.shuffle.first
+    )
+
+  Comment.create!(
+    content: "友人へも共有しました",
+    post_id: post_ids.shuffle.first
+    )
+
+  Comment.create!(
+    content: "気を付けます！ありがとうございます",
+    post_id: post_ids.shuffle.first
+    )
+
+  Comment.create!(
+    content: "学校へも連絡しました！ありがとうございました！",
+    post_id: post_ids.shuffle.first
+    )
+      
 
 
       

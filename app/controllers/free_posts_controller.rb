@@ -33,12 +33,12 @@ class FreePostsController < ApplicationController
     
       def create
         @freepost = current_user.free_posts.build(free_post_params)
-          # if @post.save
+          if @freepost.save
           #   ShareMailer.share_mail(@post).deliver 
-          #   redirect_to posts_path, notice: "投稿を作成しました！"
-          # else
-          #   render :new
-          # end
+            redirect_to free_posts_path, notice: "投稿を作成しました！"
+           else
+             render :new
+           end
         
       end
     
@@ -64,7 +64,7 @@ class FreePostsController < ApplicationController
       private
     
       def free_post_params
-        params.require(:freepost).permit(:title, :content, :kind, :target_child_age)
+        params.require(:free_post).permit(:title, :content, :kind, :target_child_age)
       end
   
       def not_edit
