@@ -4,11 +4,9 @@ lock '3.16.0'
 # デプロイするアプリケーション名
 set :application, 'protect_kids_app'
 
-# cloneするgitのレポジトリ
-# （xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
+# cloneするgitのレポジトリ）
 set :repo_url, 'https://github.com/kumajirokumataro/protect_kids_app'
 
-# deployするブランチ。デフォルトでmainを使用している場合、masterをmainに変更してください。
 set :branch, ENV['BRANCH'] || 'master'
 
 # deploy先のディレクトリ。
@@ -22,7 +20,7 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/uploads}
 set :keep_releases, 5
 
 # Rubyのバージョン
-set :rbenv_ruby, '3.0.1'
+set :rbenv_ruby, '3.2.2'
 set :rbenv_type, :system
 
 # 出力するログのレベル。エラーログを詳細に見たい場合は :debug に設定する。
