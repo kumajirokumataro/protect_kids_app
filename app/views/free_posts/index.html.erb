@@ -1,9 +1,11 @@
-<div>
+<div class="new_freepost">
 <% if current_user %>
-  <%= link_to t('view.new_post'), new_free_post_path %>
+  <p><%= link_to t('view.new_freepost'), new_free_post_path %></p>
 <% end %>
+</div>
 
 <div class="searchbox">
+
   <%= form_with scope: :search, url: free_posts_path, local: true, method: :get do |f| %>
   <%= f.text_field :title, placeholder: "検索したい内容を記入してください。" %>
   <%= f.select :target_child_age, FreePost.target_child_ages.keys.map {|k| [k, k]}, include_blank: "選択して下さい" %>
@@ -11,28 +13,37 @@
   <% end %>
 </div>
 
- <table>
-    <tr>
-      <th><%= t('view.title') %></th>
-      <th><%= t('view.content') %></th>
-      <th><%= t('view.type') %></th>
-      <th><%= t('view.target_child_age') %></th>
-      <th><%= t('view.nickname') %></th>
-    </tr>
-
-    <% @freeposts.each do |post| %>
-      <tr class="post_list">
-      <td><%= post.title %></td>
-      <td><%= post.content %></td>
-      <td><%= post.kind %></td>
-      <td><%= post.target_child_age %></td>
-      <td><%= post.user.nickname %></td>
-
-      <td><%= link_to t('view.post_detail'), free_post_path(post.id) %></td>
+<div class="freepost_index_box">
+  <% @freeposts.each do |post| %> 
+  <div class="freepost_one_box"">
+  <div class="title_box"> 
+    <div class="freepost_view_box"><%= t('view.title') %></div>
+    <%= post.title %>
+  </div>
+  <div class="kind_childage_nicknamebox">
+    <div class="kcn_box">
+      <div class="freepost_kcn_view_box""><%= t('view.kind') %></div>
+      <div id="postkind_box"><%= post.kind %></div>
+    </div>
+<div class="kcn_box">
+  <div class="freepost_kcn_view_box"><%= t('view.target_child_age') %></div>
+  <div id="postchildage_box"><%= post.target_child_age %></div>
+</div>
+<div class="kcn_box">
+  <div class="freepost_kcn_view_box"><%= t('view.nickname') %></div>
+  <div id="postnickname_box"><%= post.user.nickname %></div>  
+</div>
+</div>
+<div class="content_box">
+<div class="freepost_view_box"><%= t('view.content') %></div>
+  <%= post.content %>
+</div>
+<%= link_to t('view.post_detail'), free_post_path(post.id) %>
       <% if current_user && current_user.id == post.user_id %>
-        <td><%= link_to t('view.edit'), edit_free_post_path(post.id) %></td>
+        <%= link_to t('view.edit'), edit_free_post_path(post.id) %>
       <% end %>
-      </tr>
-    <% end %>
-  </table>
+<% end %>
+</div>
+</div>
+  
 </div>

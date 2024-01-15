@@ -14,8 +14,10 @@ ja:
     edit: 編集
     destroy: 削除
     new_post: 新規投稿＜こちらをクリックして危険情報を投稿して下さい！＞
+    new_freepost: 新規投稿＜こちらから皆へ共有したい安全対策情報を共有できます！ここをクリック！＞
+    freepost_search: こちらから記事を検索できます
     title: タイトル
-    type: タイプ
+    kind: タイプ
     name: 名前
     email: Eメール 
     password: パスワード

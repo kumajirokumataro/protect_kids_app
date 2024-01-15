@@ -1,9 +1,33 @@
 
 .header {
-  background-color: #F5B4B3;
+  background-color: #def0f5;
   height: 50px;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
 }
+.header_link{
+  display: flex;
+  justify-content: flex-end;
+}
+.header_link div{
+  margin-left: 0.3em;
+}
+#wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer{
+  background-color: #def0f5;
+  height: 50px;
+  margin-top: auto;
+}
+
+.footer p{
+  text-align: center;
+  line-height: 50px;
+}
+
 .new_post{
   padding: 3em 0;
   margin: 2em 0;
@@ -17,6 +41,28 @@
   text-align: center;
   font-size: 2rem;
 }
+
+.new_freepost{
+  padding: 3em 0;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #6091d3;/*文字色*/
+  background: #FFF;
+  border: solid 3px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  width: 60%;
+  height: 10px;
+}
+.new_freepost p{
+  text-align: center;
+  font-size: 1rem;
+  line-height: 10px;
+}
+
+
+
+
+
 
 .container{
   margin-top: 50px;
@@ -62,3 +108,36 @@
   line-height: 80px;
 }
 
+.kind_childage_nicknamebox{
+  display: flex;
+  flex-direction: row; 
+}
+
+.freepost_view_box{
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 5px #7db4e6;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+  width: 25%;
+  font-size: 0.7rem;
+}
+
+.freepost_kcn_view_box{
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 5px #7db4e6;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+  width: 80%;
+  font-size: 0.7rem;
+}
+.freepost_index_box{
+  margin-top: 80px;
+}
+ .freepost_one_box{
+  margin-top: 30px;
+ }
+ .kcn_box{
+  margin-right: 3%;
+ }
