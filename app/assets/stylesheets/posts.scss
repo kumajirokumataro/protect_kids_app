@@ -2,3 +2,142 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.new_post{
+  padding: 3em 0;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #6091d3;/*文字色*/
+  background: #FFF;
+  border: solid 3px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+
+.new_post p{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.container{
+  margin-top: 50px;
+}
+
+.post_name_content{
+  padding: 0.4em 0.5em;
+  color: #494949;
+  background: #f4f4f4;
+  border-left: solid 5px #7db4e6;
+  border-bottom: solid 3px #d7d7d7;
+  width: 25%;
+  font-size: 0.7rem;
+}
+.name_content{
+  padding-bottom: 15px;
+  font-size: 1.1rem;
+}
+.container_two{
+  display: flex;
+  flex-direction: row; 
+  height: 80px;
+}
+.container_two_box{
+  margin-right: 2rem;
+}
+.post_type_area_time_nickname{
+  padding: 0.4em 0.5em;
+  color: #494949;
+  background: #f4f4f4;
+  border-bottom: solid 3px #d7d7d7;
+  font-size: 0.7rem;
+  margin-bottom: 0;
+}
+.type_area_time_nickname{
+  padding: 0.4em 0.5em;
+  color: #494949;
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+.post_detail_link{
+  line-height: 80px;
+}
+
+// ココカラ下はfreepostの分
+
+.new_freepost{
+  padding: 3em 0;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #6091d3;
+  background: #FFF;
+  border: solid 3px #6091d3;
+  border-radius: 10px;
+  width: 60%;
+  height: 10px;
+}
+.new_freepost p{
+  text-align: center;
+  font-size: 1rem;
+  line-height: 10px;
+}
+
+.kind_childage_nicknamebox{
+  display: flex;
+  flex-direction: row; 
+}
+
+.freepost_view_box{
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 5px #7db4e6;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+  width: 25%;
+  font-size: 0.7rem;
+}
+
+.freepost_kcn_view_box{
+  padding: 0.4em 0.5em;
+  color: #494949;
+  background: #f4f4f4;
+  border-left: solid 5px #7db4e6;
+  border-bottom: solid 3px #d7d7d7;
+  width: 80%;
+  font-size: 0.7rem;
+}
+.freepost_index_box{
+  margin-top: 80px;
+}
+ .freepost_one_box{
+  margin-top: 30px;
+ }
+ .kcn_box{
+  margin-right: 3%;
+ }
+ .freepost_view_detale{
+  font-size: 1rem;
+  color: #7db4e6;
+  border-bottom: dashed 2px #6594e0;
+  width: 50%;
+ }
+ .freepost_detale{
+  padding-bottom: 7px;
+ }
+ .freepost_text{
+  padding-bottom: 40px;
+ }
+//  詳細画面
+.danger_post{
+  font-size: 2rem;
+}
+.danger_view_post{
+  background: #c2edff;
+  padding: 0.5em;
+  width: 20%;
+  margin-top: 10px;
+}
+#map{
+  margin-top: 20px;
+}
+
+
+
+

@@ -3,7 +3,7 @@ ja:
   view:
     toppage: トップページ
     index: 一覧
-    post_name: 事故情報
+    post_name: 事件事故情報
     area_name: 地域名
     content: 内容
     user_detail: ユーザー詳細
@@ -17,7 +17,6 @@ ja:
     new_freepost: 新規投稿＜こちらから皆へ共有したい安全対策情報を共有できます！ここをクリック！＞
     freepost_search: こちらから記事を検索できます
     title: タイトル
-    kind: タイプ
     name: 名前
     email: Eメール 
     password: パスワード
@@ -43,11 +42,15 @@ ja:
     enter_your_email: あなたのEメールを入力して下さい
     enter_your_password: あなたのパスワードを入力して下さい
     enter_your_two_password: あなたのパスワードを入力して下さい
-    enter_your_nickname: あなたのユーザー名を入力して下さい。表示される名前となります。（例）くまたろう、
+    enter_your_nickname: ユーザー名を入力して下さい。表示される名前となります。（例）くまたろう
     select_area: あなたが、情報が欲しい地域を選んでください。登録した地域で危険情報が入ると、メールで通知が届きます。
     enter_your_self_introduction: （例）3歳と小学1年生の男の子のママです！とても元気で活発ですが、ケガしないか毎日ハラハラの日々です。
+    destroy_check: 本当に削除しますか?
     create_new_post: 新規投稿する
     latest: 最新の
+    comment: コメント
+    comment_edit: コメント編集
+    comment_destroy: コメント削除
 
   activerecord:
     errors:

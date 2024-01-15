@@ -1,11 +1,11 @@
-<div class="new_freepost">
 <% if current_user %>
-  <p><%= link_to t('view.new_freepost'), new_free_post_path %></p>
+  <div class="new_freepost">
+    <p><%= link_to t('view.new_freepost'), new_free_post_path %></p>
+  </div>
 <% end %>
-</div>
 
 <div class="searchbox">
-
+  <h3><%= t('view.freepost_search') %></h3>
   <%= form_with scope: :search, url: free_posts_path, local: true, method: :get do |f| %>
   <%= f.text_field :title, placeholder: "検索したい内容を記入してください。" %>
   <%= f.select :target_child_age, FreePost.target_child_ages.keys.map {|k| [k, k]}, include_blank: "選択して下さい" %>

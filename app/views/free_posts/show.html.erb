@@ -1,9 +1,13 @@
 <h1><%= t('view.post_detail') %></h1>
-<div class="post-text">
-  <p><%= t('view.title') %> : <%= @freepost.title %></p>
-  <p><%= t('view.content') %> : <%= @freepost.content %></p>
-  <p><%= t('view.kind') %> : <%= @freepost.kind %></p>
-  <p><%= t('view.target_child_age') %> : <%= @freepost.target_child_age %></p>
+<div class="freepost_text">
+  <div class="freepost_view_detale"><%= t('view.title') %></div>
+  <div class="freepost_detale"><%= @freepost.title %></div>
+  <div class="freepost_view_detale"><%= t('view.content') %></div>
+  <div class="freepost_detale"><%= @freepost.content %></div>
+  <div class="freepost_view_detale"><%= t('view.kind') %></div>
+  <div class="freepost_detale"><%= @freepost.kind %></div>
+  <div class="freepost_view_detale"><%= t('view.target_child_age') %></div>
+  <div class="freepost_detale"><%= @freepost.target_child_age %></div>
 </div>
 
 <%= link_to t('view.index'), free_posts_path %>

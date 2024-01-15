@@ -1,8 +1,8 @@
-<div class="new_post">
 <% if current_user %>
-  <p><%= link_to t('view.new_post'), new_post_path %></p>
+  <div class="new_post">
+    <p><%= link_to t('view.new_post'), new_post_path %></p>
+  </div>
 <% end %>
-</div>
 
 <h1><%= t('view.latest') %><%= t('view.dangerpost_index') %></h1>
 

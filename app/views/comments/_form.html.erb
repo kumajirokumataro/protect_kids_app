@@ -1,4 +1,4 @@
-<!-- この記述がpostのshow画面に表示されるコメント入力欄になります -->
+<!-- この記述がpostのshow画面に表示されるコメント入力欄 -->
 <%= form_with(model: [post, comment], local: false) do |f| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
@@ -15,11 +15,9 @@
   <%= f.label :content %>
   <%= f.text_area :content %>
   </div>
-  <div id="comment_error">
-  </div>
+  <div id="comment_error"></div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 
- #, local: true

@@ -1,10 +1,15 @@
 <h1><%= t('view.post_detail') %></h1>
 <div class="post-text">
-  <p><%= t('view.post_name') %> : <%= @post.title %></p>
-  <p><%= t('view.content') %> : <%= @post.content %></p>
-  <p><%= t('view.type') %> : <%= @post.type %></p>
-  <p><%= t('view.area_name') %> : <%= @post.area.name %></p>
-  <p><%= t('view.created_at') %> : <%= @post.created_at.to_s(:datetime_jp) %></p>
+  <div class="danger_view_post"><%= t('view.post_name') %></div>
+  <div class="danger_post"><%= @post.title %></div>
+  <div class="danger_view_post"><%= t('view.content') %></div>
+  <div class="danger_post"><%= @post.content %></div>
+  <div class="danger_view_post"><%= t('view.kind') %></div>
+  <%= @post.type %>
+  <div class="danger_view_post"><%= t('view.area_name') %></div> 
+  <%= @post.area.name %>
+  <div class="danger_view_post"><%= t('view.created_at') %></div>
+  <%= @post.created_at.to_s(:datetime_jp) %>
 </div>
 <div id="map" style="height: 400px;"></div>
 
@@ -44,8 +49,8 @@
     src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap&v=weekly" 
     async defer>
 </script>
-
-<p>コメント一覧</p>
+<div class="comments_box">
+<p><%= t('view.comment') %><%= t('view.index') %></p>
 
   <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
   <div id="comments_area">
@@ -55,6 +60,7 @@
 
   <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
   <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+</div>
 
 
 <%= link_to t('view.index'), posts_path %>
