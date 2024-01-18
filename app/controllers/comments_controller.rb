@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_post, only: [:create, :edit, :update]
   before_action :not_edit_destroy_admin, only: [:edit, :update, :destroy]
   #updateとdestroyを入れるか迷ったけど、ブラウザ上以外でも更新できてしまうので、必ず入れるべき、とのこと！
+  before_action :not_create_user, only: [:create]
 
   def create
     @comment = @post.comments.build(comment_params)
@@ -59,6 +60,12 @@ class CommentsController < ApplicationController
     if current_user == false 
       redirect_to posts_path, notice: "権限がありません！"
     elsif current_user && current_user.admin == false
+      redirect_to posts_path, notice: "権限がありません！"
+    end
+  end
+
+  def not_create_user
+    if current_user == false 
       redirect_to posts_path, notice: "権限がありません！"
     end
   end

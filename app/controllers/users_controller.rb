@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :not_currentuser_notadmin_newpath, {only: [:new]}
-  before_action :not_currentuser_notadmin_path, {only: [:edit]}
-  #destroyとupdateは入れるべきか？
+  before_action :not_currentuser_notadmin_path, only: [:edit, :update, :destroy]
   skip_before_action :login_required, only: [:new, :create]
   before_action :not_users_new_if_logged_in, only: [:new]
 
@@ -49,8 +48,8 @@ class UsersController < ApplicationController
   end
 
   def not_currentuser_notadmin_path
-    if current_user.id != User.find(params[:id])&& current_user.admin == false
-      redirect_to posts_path, alert: '本人と管理者以外はアクセスできません'
+    if current_user.id != User.find(params[:id]).id && current_user.admin == false
+       redirect_to posts_path, alert: '本人と管理者以外はアクセスできません'
     end
   end
 end

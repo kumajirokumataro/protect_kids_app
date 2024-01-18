@@ -8,7 +8,11 @@ class User < ApplicationRecord
   validates :nickname, length: { maximum: 40 }
   validates :self_introduction, length: { maximum: 200 }
   validates :email, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-  before_validation { email.downcase! }
+  before_validation {
+     name = "" if name.nil?
+     email = "" if email.nil?
+   email.downcase!   
+   }
   validates :password_digest, length: { minimum: 6 }
   has_secure_password
   enum gender: { "女性": 0, "男性": 1 }

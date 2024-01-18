@@ -1,22 +1,28 @@
 <h1><%=t('view.login')%></h1>
-<%= form_with(model: User.new, url: sessions_path, local: true) do |f| %>
-  <%# model: User.new %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+<div class="login">
+  <%= form_with(model: User.new, url: sessions_path, local: true) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
-  <%= f.submit t('view.login') %>
-<% end %>
+    <%= f.submit t('view.login') %>
+  <% end %>
+</div>
 
-<h3><%=t('view.guest')%><%=t('view.login')%></h1>
-<%= form_with(scope: :guestsession, url: guestsessions_path ) do |f| %>
-  <%= f.submit t('view.login') %>
-<% end %>
+<div class="login">
+  <h3><%=t('view.guest')%><%=t('view.login')%></h1>
+    <%= form_with(scope: :guestsession, url: guestsessions_path ) do |f| %>
+      <%= f.submit t('view.login') %>
+  <% end %>
+</div>
 
-<h3><%=t('view.guest')%><%=t('view.admin_view')%><%=t('view.login')%></h1>
-<%= form_with(scope: :guestsession, url: guestsessions_admin_path ) do |f| %>
-  <%= f.submit t('view.login') %>
-<% end %>
+<div class="login">
+  <h3><%=t('view.guest')%><%=t('view.admin_view')%><%=t('view.login')%></h1>
+    <%= form_with(scope: :guestsession, url: guestsessions_admin_path ) do |f| %>
+      <%= f.submit t('view.login') %>
+    <% end %>
+</div>
+
 

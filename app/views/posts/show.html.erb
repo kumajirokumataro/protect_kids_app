@@ -59,7 +59,9 @@
   </div>
 
   <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-  <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+  <% if logged_in? %>
+    <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+  <% end %>
 </div>
 
 

@@ -39,7 +39,6 @@ gem 'fog-aws'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'dotenv-rails' # 開発環境で環境変数を操作するのに必要
 gem 'unicorn' 
 
 group :development, :test do
@@ -52,6 +51,12 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
+  gem 'spring'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
+  gem 'launchy'
+
 end
 
 group :development do
@@ -62,7 +67,6 @@ group :development do
   #gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
   gem 'letter_opener_web'
 end
 
@@ -72,6 +76,7 @@ group :test do
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'shoulda-matchers', '~> 6.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
