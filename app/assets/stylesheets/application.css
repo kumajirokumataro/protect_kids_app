@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+body{
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 
 .header {
   background-color: #def0f5;
@@ -26,16 +31,20 @@
 .header_link div{
   margin-left: 0.3em;
 }
-#wrapper{
+/* #wrapper{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
+} */
 
 .footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: #def0f5;
   height: 50px;
-  margin-top: auto;
+  /* margin-top: auto; */
 }
 
 .footer p{

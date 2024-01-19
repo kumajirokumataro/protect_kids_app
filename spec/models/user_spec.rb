@@ -11,10 +11,19 @@ RSpec.describe User, type: :model do
   it { should validate_length_of(:email).is_at_most(80) }
   it { should validate_length_of(:nickname).is_at_most(40) }
   it { should validate_length_of(:self_introduction).is_at_most(200) }
-  # it { should validate_uniqueness_of(:email) }
   it { should allow_value('user@example.com').for(:email) }
   it { should_not allow_value('invalid_email').for(:email) }
   it { should validate_length_of(:password_digest).is_at_least(6) }
+
+  describe "Eメールの一意性を確認するテスト" do
+    let!(:user) { FactoryBot.create(:user) }
+    let!(:other_user) { FactoryBot.create(:other_user) }
+    context "同じEメールで登録しようとした時" do
+      it "登録することはできない" do
+      expect(user.update(email: "noriko@gmail.com")).to be_falsey
+      end
+    end
+  end
 
   describe "管理者ユーザーの人数に関するテスト" do
     let!(:user) { FactoryBot.create(:user) }

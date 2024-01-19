@@ -13,6 +13,7 @@ class User < ApplicationRecord
      email = "" if email.nil?
    email.downcase!   
    }
+  # nameとemailに初期値を再設定する方法もあるけど、このような方法もある
   validates :password_digest, length: { minimum: 6 }
   has_secure_password
   enum gender: { "女性": 0, "男性": 1 }

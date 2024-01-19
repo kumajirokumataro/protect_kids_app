@@ -10,17 +10,24 @@
     </div>
   <% end %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-
-  <%= f.label :kind %>
-  <%= f.select :kind, FreePost.kinds.keys.map {|k| [k, k]} %>
-  
-  <%= f.label :target_child_age %>
-  <%= f.select :target_child_age, FreePost.target_child_ages.keys.map {|k| [k, k]} %>
-  
-  <%= f.submit %>
+<div class="free_post_form">
+  <div class="free_post_tckt_form">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="free_post_tckt_form">
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+  <div class="free_post_tckt_form">
+    <%= f.label :kind %>
+    <%= f.select :kind, FreePost.kinds.keys.map {|k| [k, k]} %>
+  </div>
+  <div class="free_post_tckt_form"> 
+    <%= f.label :target_child_age %>
+    <%= f.select :target_child_age, FreePost.target_child_ages.keys.map {|k| [k, k]} %>
+  </div> 
+  <div class="free_post_tckt_submit"> 
+    <%= f.submit %>
+  </div>
 <% end %>
