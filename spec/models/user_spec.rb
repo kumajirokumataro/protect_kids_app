@@ -16,11 +16,19 @@ RSpec.describe User, type: :model do
   it { should_not allow_value('invalid_email').for(:email) }
   it { should validate_length_of(:password_digest).is_at_least(6) }
 
-  describe "一意性を確認するテスト" do
+  describe "管理者ユーザーの人数に関するテスト" do
     let!(:user) { FactoryBot.create(:user) }
-    let(:area) { FactoryBot.build(:area, "徳丸") }
-    it "同じものは作成できない" do
-      expect(area.valid?).to be_falsey
+    let!(:other_user) { FactoryBot.create(:other_user) }
+    let!(:admin_user) { FactoryBot.create(:admin_user) }
+    context "管理者ユーザーが一人でそのアカウントを削除しようとした時" do
+      it "削除することはできない" do
+        expect(admin_user.destroy).to be_falsey 
+      end
+    end
+    context "管理者ユーザーが一人でその権限を「管理者権限無し」へ更新しようとした時" do
+      it "更新することはできない" do
+        expect(admin_user.update(admin: false)).to be_falsey 
+      end
     end
   end
   

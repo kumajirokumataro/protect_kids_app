@@ -28,7 +28,7 @@
   <p><%= t('view.select_area') %></p>
   <%= f.label :area_id %><br>
     <% Area.all.each do |area| %>
-      <%= f.check_box :area_ids, { multiple: true, checked: area[:checked], disabled: area[:disabled], include_hidden: false }, area[:id] %>
+      <%= f.check_box :area_ids, { multiple: true, checked: @user.area_ids.include?(area.id), disabled: area[:disabled], include_hidden: false }, area[:id] %>
       <%= area.name %><br>
     <% end %>
   

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :not_currentuser_notadmin_newpath, {only: [:new]}
   before_action :not_currentuser_notadmin_path, only: [:edit, :update, :destroy]
-  skip_before_action :login_required, only: [:new, :create]
-  before_action :not_users_new_if_logged_in, only: [:new]
+  skip_before_action :login_required, only: [:new, :create, :show]
+  before_action :not_users_new_if_logged_in, only: [:new] 
 
   
   def new
