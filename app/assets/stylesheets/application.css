@@ -17,6 +17,7 @@ body{
   margin: 0;
   padding: 0;
   position: relative;
+  margin-bottom: 100px;
 }
 
 .header {
@@ -43,13 +44,15 @@ body{
   bottom: 0;
   width: 100%;
   background-color: #def0f5;
-  height: 50px;
+  height: 100px;
   /* margin-top: auto; */
 }
 
 .footer p{
   text-align: center;
-  line-height: 50px;
+  line-height: 100px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 
