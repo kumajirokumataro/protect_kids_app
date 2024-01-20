@@ -21,12 +21,12 @@ class PostsController < ApplicationController
       @post = current_user.posts.build(post_params)
       @post.area_id = Area.find_by(name: params[:post][:name]).id
       
-        if @post.save
-          ShareMailer.share_mail(@post).deliver 
-          redirect_to posts_path, notice: "投稿を作成しました！"
-        else
-          render :new
-        end
+      if @post.save
+        ShareMailer.share_mail(@post).deliver 
+        redirect_to posts_path, notice: "投稿を作成しました！"
+      else
+        render :new
+      end
       
     end
   
