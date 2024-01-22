@@ -33,6 +33,7 @@ gem 'faker'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'aws-sdk-rails', '~> 3.6', '>= 3.6.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
