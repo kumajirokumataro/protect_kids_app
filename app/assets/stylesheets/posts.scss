@@ -135,6 +135,14 @@
 .free_post_tckt_submit{
   margin-top: 15px;
 }
+.content_box{
+  max-width: 50%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
 //  詳細画面
 .danger_post{
   font-size: 2rem;
