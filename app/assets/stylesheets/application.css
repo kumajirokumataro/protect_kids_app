@@ -32,11 +32,6 @@ body{
 .header_link div{
   margin-left: 0.3em;
 }
-/* #wrapper{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-} */
 
 .footer{
   position: fixed;

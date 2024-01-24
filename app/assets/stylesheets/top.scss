@@ -1,3 +1,33 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.toppage{
+  width: 100%;
+}
+.subheading{
+  margin: 0 auto;
+  width: 50%;
+}
+.subheading h4{
+  text-align: center;
+}
+.top_title{
+  margin: 0 auto;
+  width: 50%;
+}
+.top_title h1{
+  text-align: center;
+}
+
+.function{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.last_function{
+  width: 60%;
+  margin: 0 auto;
+}
+.last_function p{
+  padding-bottom: 40px;
+}
