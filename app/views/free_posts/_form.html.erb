@@ -1,3 +1,4 @@
+<div class="free_post_new_edit">
 <%= form_with(model: @freepost) do |f| %>
   <% if @freepost.errors.any? %>
     <div id="error_explanation">
@@ -12,12 +13,20 @@
 
 <div class="free_post_form">
   <div class="free_post_tckt_form">
-    <%= f.label :title %>
-    <%= f.text_area :title, size: "70x2" %>
+    <div class="free_post_label">
+      <%= f.label :title %>
+    </div>
+    <div class="free_post_textarea_title">
+      <%= f.text_area :title %>
+    </div>
   </div>
   <div class="free_post_tckt_form">
-    <%= f.label :content %>
-    <%= f.text_area :content, size: "70x10" %>
+    <div class="free_post_label">
+      <%= f.label :content %>
+    </div>
+    <div class="free_post_textarea_content">
+      <%= f.text_area :content %>
+    </div>
   </div>
   <div class="free_post_tckt_form">
     <%= f.label :kind %>
@@ -31,3 +40,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
