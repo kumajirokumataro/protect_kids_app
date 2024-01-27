@@ -126,16 +126,7 @@
   padding-bottom: 40px;
  }
 
-// #free_post_content {
-//   width: 50%;
-//   height: 50px
-// }
-.free_post_tckt_form{
-  margin-top: 15px;
-}
-.free_post_tckt_submit{
-  margin-top: 15px;
-}
+
 .content_box{
   max-width: 50%;
   display: -webkit-box;
@@ -160,6 +151,10 @@
 
 // 新規投稿編集画面
 
+.free_post_newedit_top h2{
+  text-align: center;
+}
+
 .free_post_label{
   width: 15%;
   margin-bottom: 1.0rem;
@@ -175,6 +170,15 @@
 #free_post_content{
   width: 100%;
   height: 10rem;
+}
+.free_post_tckt_form{
+  margin-top: 15px;
+}
+.free_post_tckt_submit{
+  margin-top: 15px;
+}
+.free_post_form{
+  padding-bottom: 5rem;
 }
 
 
