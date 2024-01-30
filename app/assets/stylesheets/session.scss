@@ -1,0 +1,28 @@
+.login_title h1{
+  text-align: center;
+}
+.login_user{
+  width: 30%;
+  margin: 0 auto;  
+}
+.login_email{
+  padding-bottom: 1rem;
+}
+.login_label{
+  margin-bottom: 0.7rem;
+}
+.login_password{
+  padding-bottom: 0.7rem;
+}
+#user_password.login_field, #user_email.login_field{
+  width: 100%;
+}
+// .login_label{
+//   text-align: center;
+// }
+// .login_field{
+//   text-align: center;
+// }
+// .login_clickbotton{
+//   text-align: center;
+// }
