@@ -24,9 +24,13 @@ $ rails s
 https://docs.google.com/spreadsheets/d/1z6LoKSYiDKv_cszv0pbiycNvLzHiiXEzgXozoRocm4Y/edit?usp=sharing
 
 ## ER図
+![卒業課題-ER図 drawio](https://github.com/kumajirokumataro/protect_kids_app/assets/140575941/62e99c12-0ec5-4d35-b8ba-3320ceb8427b)
 
 
 ## ワイヤーフレーム
+![卒業課題-ページ3 (1)](https://github.com/kumajirokumataro/protect_kids_app/assets/140575941/18585475-1866-45f7-b0d0-9d9d93c239fc)
+
 
 
 ## 画面遷移図
+![卒業課題-画面遷移図 drawio](https://github.com/kumajirokumataro/protect_kids_app/assets/140575941/84dd8d02-6e8d-4dca-a7b1-ee5c055c7368)
