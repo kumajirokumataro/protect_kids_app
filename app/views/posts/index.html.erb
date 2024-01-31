@@ -7,42 +7,43 @@
 <h1><%= t('view.latest') %><%= t('view.dangerpost_index') %></h1>
 
 <% @posts.each do |post| %>
-<div class="container">  
-  <div class=post_name_content>
-    <%= t('view.post_name') %>
-  </div>
-  <div class=name_content>
-    <%= post.title %>
-  </div>
-  <div class="post_name_content">
-    <%= t('view.content') %>
-  </div>
-  <div class=name_content>
-    <%= post.content %>
-  </div>
-  <div class="container_two">
-    <div class="container_two_box">  
-      <p class="post_type_area_time_nickname"><%= t('view.type') %></p>
-      <p class="type_area_time_nickname"><%= post.type %></p>
+  <div class="container">  
+    <div class=post_name_content>
+      <%= t('view.post_name') %>
     </div>
-    <div class="container_two_box">
-      <p class="post_type_area_time_nickname"><%= t('view.area_name') %></p>
-      <p class="type_area_time_nickname"><%= post.area.name %></p>
+    <div class=name_content>
+      <%= post.title %>
     </div>
-    <div class="container_two_box">
-      <p class="post_type_area_time_nickname"><%= t('view.created_at') %></p>
-      <p class="type_area_time_nickname"><%= post.created_at.to_s(:datetime_jp) %></p>
+    <div class="post_name_content">
+      <%= t('view.content') %>
     </div>
-    <div class="container_two_box">
-      <p class="post_type_area_time_nickname"><%= t('view.nickname') %></p>
-      <p class="type_area_time_nickname"><%= User.find(post.user_id).nickname %></p>
+    <div class=name_content>
+      <%= post.content %>
     </div>
-    <div class=post_detail_link>
-      <%= link_to t('view.post_detail'), post_path(post.id) %>
+    <div class="container_two">
+      <div class="container_two_box">  
+        <p class="post_type_area_time_nickname"><%= t('view.type') %></p>
+        <p class="type_area_time_nickname"><%= post.type %></p>
+      </div>
+      <div class="container_two_box">
+        <p class="post_type_area_time_nickname"><%= t('view.area_name') %></p>
+        <p class="type_area_time_nickname"><%= post.area.name %></p>
+      </div>
+      <div class="container_two_box">
+        <p class="post_type_area_time_nickname"><%= t('view.created_at') %></p>
+        <p class="type_area_time_nickname"><%= post.created_at.to_s(:datetime_jp) %></p>
+      </div>
+      <div class="container_two_box">
+        <p class="post_type_area_time_nickname"><%= t('view.nickname') %></p>
+        <p class="type_area_time_nickname"><%= User.find(post.user_id).nickname %></p>
+      </div>
+      <div class=post_detail_link>
+        <%= link_to t('view.post_detail'), post_path(post.id) %>
+      </div>
     </div>
   </div>
-  <% end %>
-</div>
+<% end %>
+
      
 
       

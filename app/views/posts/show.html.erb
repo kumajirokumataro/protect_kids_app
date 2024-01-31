@@ -50,7 +50,7 @@
     async defer>
 </script>
 <div class="comments_box">
-<p><%= t('view.comment') %><%= t('view.index') %></p>
+  <p><%= t('view.comment') %><%= t('view.index') %></p>
 
   <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
   <div id="comments_area">
@@ -63,7 +63,6 @@
     <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
   <% end %>
 </div>
-
 
 <%= link_to t('view.index'), posts_path %>
 <%= link_to t('view.user_detail'), user_path(@post.user_id) %>

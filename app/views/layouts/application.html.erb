@@ -5,49 +5,47 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
 
   <body>
-  <div id="wrapper">
-  <header class="header">
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
+    <header class="header">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
 
-  <div class="header_link">
-    <% if logged_in? && current_user.admin %>
-      <div><%= link_to t('view.toppage'), top_index_path %></div>
-      <div><%= link_to t('view.mypage'), user_path(current_user.id) %></div>
-      <div><%= link_to t('view.freepost_index'), free_posts_path %></div>
-      <div><%= link_to t('view.dangerpost_index'), posts_path %></div>
-      <%# link_to t('view.information_map'), posts_path %>
-      <div><%= link_to t('view.admin_view'), rails_admin_path %></div>
-      <div><%= link_to t('view.logout'), session_path(current_user.id), method: :delete %></div>     
-    <% elsif logged_in? %>
-      <div><%= link_to t('view.toppage'), top_index_path %></div>
-      <div><%= link_to t('view.mypage'), user_path(current_user.id) %></div>
-      <div><%= link_to t('view.freepost_index'), free_posts_path %></div>
-      <div><%= link_to t('view.dangerpost_index'), posts_path %></div>
-      <%# link_to t('view.information_map'), posts_path %>
-      <div><%= link_to t('view.logout'), session_path(current_user.id), method: :delete %></div>
-    <% else %>
-      <div><%= link_to t('view.toppage'), top_index_path %></div>
-      <div><%= link_to t('view.signup'), new_user_path %></div>
-      <div><%= link_to t('view.login'), new_session_path %></div>
-      <div><%= link_to t('view.freepost_index'), free_posts_path %></div>
-      <div><%= link_to t('view.dangerpost_index'), posts_path %></div>
-      <%# link_to t('view.information_map'), posts_path %>
-    <% end %>
-  </div>
-  </header>
+      <div class="header_link">
+        <% if logged_in? && current_user.admin %>
+          <div><%= link_to t('view.toppage'), top_index_path %></div>
+          <div><%= link_to t('view.mypage'), user_path(current_user.id) %></div>
+          <div><%= link_to t('view.freepost_index'), free_posts_path %></div>
+          <div><%= link_to t('view.dangerpost_index'), posts_path %></div>
+          <%# link_to t('view.information_map'), posts_path %>
+          <div><%= link_to t('view.admin_view'), rails_admin_path %></div>
+          <div><%= link_to t('view.logout'), session_path(current_user.id), method: :delete %></div>     
+        <% elsif logged_in? %>
+          <div><%= link_to t('view.toppage'), top_index_path %></div>
+          <div><%= link_to t('view.mypage'), user_path(current_user.id) %></div>
+          <div><%= link_to t('view.freepost_index'), free_posts_path %></div>
+          <div><%= link_to t('view.dangerpost_index'), posts_path %></div>
+          <%# link_to t('view.information_map'), posts_path %>
+          <div><%= link_to t('view.logout'), session_path(current_user.id), method: :delete %></div>
+        <% else %>
+          <div><%= link_to t('view.toppage'), top_index_path %></div>
+          <div><%= link_to t('view.signup'), new_user_path %></div>
+          <div><%= link_to t('view.login'), new_session_path %></div>
+          <div><%= link_to t('view.freepost_index'), free_posts_path %></div>
+          <div><%= link_to t('view.dangerpost_index'), posts_path %></div>
+          <%# link_to t('view.information_map'), posts_path %>
+        <% end %>
+      </div>
+    </header>
+
     <%= yield %>
-  <footer class="footer">
-    <p>Copyright © Naomi All Rights Reserved.</p>
-  </footer>
-  </div>
+
+    <footer class="footer">
+      <p>Copyright © Dpro All Rights Reserved.</p>
+    </footer>
   </body>
 </html>
