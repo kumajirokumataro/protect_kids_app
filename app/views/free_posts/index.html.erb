@@ -7,16 +7,15 @@
 <div class="searchbox">
   <h3><%= t('view.freepost_search') %></h3>
   <%= form_with scope: :search, url: free_posts_path, local: true, method: :get do |f| %>
-  <%= f.text_field :title, placeholder: "検索したい内容を記入してください。" %>
-  <%= f.select :target_child_age, FreePost.target_child_ages.keys.map {|k| [k, k]}, include_blank: "選択して下さい" %>
-  <%= f.submit "検索", class: "btn" %>
+    <%= f.text_field :title, placeholder: "検索したい内容を記入してください。" %>
+    <%= f.select :target_child_age, FreePost.target_child_ages.keys.map {|k| [k, k]}, include_blank: "選択して下さい" %>
+    <%= f.submit "検索", class: "btn" %>
   <% end %>
 </div>
 
 <div class="freepost_index_box">
   <% @freeposts.each do |post| %> 
-    <div class="freepost_one_box"">
-      <div class="title_box"> 
+    <div class="title_box">
       <div class="freepost_view_box"><%= t('view.title') %></div>
       <%= post.title %>
     </div>
@@ -39,10 +38,9 @@
       <%= post.content %>
     </div>
     <%= link_to t('view.post_detail'), free_post_path(post.id) %>
-      <% if current_user && current_user.id == post.user_id %>
-        <%= link_to t('view.edit'), edit_free_post_path(post.id) %>
-      <% end %>
+    <% if current_user && current_user.id == post.user_id %>
+      <%= link_to t('view.edit'), edit_free_post_path(post.id) %>
+    <% end %>
   <% end %>
 </div>
-
   

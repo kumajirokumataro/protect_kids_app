@@ -11,33 +11,34 @@
     </div>
   <% end %>
 
-<div class="free_post_form">
-  <div class="free_post_tckt_form">
-    <div class="free_post_label">
-      <%= f.label :title %>
+  <div class="free_post_form">
+    <div class="free_post_tckt_form">
+      <div class="free_post_label">
+        <%= f.label :title %>
+      </div>
+      <div class="free_post_textarea_title">
+        <%= f.text_area :title %>
+      </div>
     </div>
-    <div class="free_post_textarea_title">
-      <%= f.text_area :title %>
+    <div class="free_post_tckt_form">
+      <div class="free_post_label">
+        <%= f.label :content %>
+      </div>
+      <div class="free_post_textarea_content">
+        <%= f.text_area :content %>
+      </div>
     </div>
-  </div>
-  <div class="free_post_tckt_form">
-    <div class="free_post_label">
-      <%= f.label :content %>
+    <div class="free_post_tckt_form">
+      <%= f.label :kind %>
+      <%= f.select :kind, FreePost.kinds.keys.map {|k| [k, k]} %>
     </div>
-    <div class="free_post_textarea_content">
-      <%= f.text_area :content %>
+    <div class="free_post_tckt_form"> 
+      <%= f.label :target_child_age %>
+      <%= f.select :target_child_age, FreePost.target_child_ages.keys.map {|k| [k, k]} %>
+    </div> 
+    <div class="free_post_tckt_submit"> 
+      <%= f.submit %>
     </div>
-  </div>
-  <div class="free_post_tckt_form">
-    <%= f.label :kind %>
-    <%= f.select :kind, FreePost.kinds.keys.map {|k| [k, k]} %>
-  </div>
-  <div class="free_post_tckt_form"> 
-    <%= f.label :target_child_age %>
-    <%= f.select :target_child_age, FreePost.target_child_ages.keys.map {|k| [k, k]} %>
-  </div> 
-  <div class="free_post_tckt_submit"> 
-    <%= f.submit %>
-  </div>
 <% end %>
 </div>
+
