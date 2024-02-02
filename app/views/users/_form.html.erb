@@ -1,3 +1,4 @@
+<div class="user_form_box">
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@user.errors.count, "error") %> <%= t('view.exist') %></h2>
@@ -9,37 +10,47 @@
   </div>
 <% end %>
 
-<%= form_with(model: @user, local: true) do |f| %>  
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder: t('view.enter_your_name') %><br>
-
-  <%= f.label :email %>
-  <%= f.email_field :email, placeholder: t('view.enter_your_email') %><br>
-
-  <%= f.label :password %>
-  <%= f.password_field :password, placeholder: t('view.enter_your_password') %><br>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, placeholder: t('view.enter_your_two_password') %><br>
-
-  <%= f.label :nickname %>
-  <%= f.text_field :nickname, placeholder: t('view.enter_your_nickname') %><br>
-
-  <p><%= t('view.select_area') %></p>
-  <%= f.label :area_id %><br>
-    <% Area.all.each do |area| %>
-      <%= f.check_box :area_ids, { multiple: true, checked: @user.area_ids.include?(area.id), disabled: area[:disabled], include_hidden: false }, area[:id] %>
-      <%= area.name %><br>
-    <% end %>
-  
-  <%= f.label :gender %>
-  <%= f.select :gender, User.genders.keys.map {|k| [k, k]} %><br>
-
-  <%= f.label :age %>
-  <%= f.select :age, User.ages.keys.map {|k| [k, k]} %><br>
-  
-  <%= f.label :self_introduction %>
-  <%= f.text_field :self_introduction, placeholder: t('view.enter_your_self_introduction') %><br>
-
+<%= form_with(model: @user, local: true) do |f| %> 
+  <div class="user_input"> 
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: t('view.enter_your_name') %><br>
+  </div>
+  <div class="user_input"> 
+    <%= f.label :email %>
+    <%= f.email_field :email, placeholder: t('view.enter_your_email') %><br>
+  </div>
+  <div class="user_input"> 
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: t('view.enter_your_password') %><br>
+  </div>
+  <div class="user_input"> 
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder: t('view.enter_your_two_password') %><br>
+  </div>
+  <div class="user_input"> 
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname, placeholder: t('view.enter_your_nickname') %><br>
+  </div>
+  <div class="user_input"> 
+    <p><%= t('view.select_area') %></p>
+    <%= f.label :area_id %><br>
+      <% Area.all.each do |area| %>
+        <%= f.check_box :area_ids, { multiple: true, checked: @user.area_ids.include?(area.id), disabled: area[:disabled], include_hidden: false }, area[:id] %>
+        <%= area.name %><br>
+      <% end %>
+  </div>
+  <div class="user_input">
+    <%= f.label :gender %>
+    <%= f.select :gender, User.genders.keys.map {|k| [k, k]} %><br>
+  </div>
+  <div class="user_input">
+    <%= f.label :age %>
+    <%= f.select :age, User.ages.keys.map {|k| [k, k]} %><br>
+  </div>  
+  <div class="user_input">
+    <%= f.label :self_introduction %>
+    <%= f.text_field :self_introduction, placeholder: t('view.enter_your_self_introduction') %><br>
+  </div>
   <%= f.submit %>
 <% end %>
+</div>
