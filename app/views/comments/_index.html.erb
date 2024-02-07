@@ -2,8 +2,9 @@
   <% comments.each do |comment| %>
     <% if comment.id.present? %>
       <li>
-        <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
-        <span><%= comment.content %></span>
+        <div class="comment_content_box" id ="this_comment_<%= comment.id %>"></div>
+        <div class="comment_content"><%= comment.content %></div>
+        <div class="comment_username"><%= comment.user.name %></div>
         <% if current_user && current_user.admin == true %>
           <span><%= link_to t('view.comment_edit'), edit_post_comment_path(post, comment), remote: true %></span>
           <span><%= link_to t('view.comment_destroy'), post_comment_path(post, comment), method: :delete, remote: true,

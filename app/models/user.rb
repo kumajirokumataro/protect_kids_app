@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :free_posts, dependent: :destroy
   has_many :selectings, dependent: :destroy
   has_many :areas, through: :selectings
+  has_many :comments, dependent: :destroy
   validates :name, presence: true, length: { maximum: 40 }
   validates :email, presence: true, length: { maximum: 80 }
   validates :nickname, length: { maximum: 40 }
