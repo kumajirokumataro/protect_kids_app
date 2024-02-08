@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .comments_box p{
-  background: #c2edff;/*背景色*/
-  padding: 0.5em;/*文字まわり（上下左右）の余白*/
+  background: #c2edff;
+  padding: 0.5em;
   width: 30%;
 }
 
@@ -12,10 +12,11 @@
 }
 .comment_content{
   background-color: white;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
-.comment_content_username{
+.comment_username{
   background-color: white;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
+  padding-bottom: 30px;
 }
 
