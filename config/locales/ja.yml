@@ -51,6 +51,10 @@ ja:
     comment: コメント
     comment_edit: コメント編集
     comment_destroy: コメント削除
+    danger_information_sharing_function: 危険情報共有機能
+    information_sharing_function: 情報共有機能
+    post_comment_function: 投稿コメント機能
+    information_map_function: 情報マップ機能
 
   activerecord:
     errors:
