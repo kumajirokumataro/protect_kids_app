@@ -4,10 +4,11 @@ class ShareMailer < ApplicationMailer
     area = Area.find(@post.area_id)
     @users = area.selecting_users
     @users.each do |user|
-      mail to: user.email, subject: "あなたの登録地域で危険情報が投稿されました"
+      begin
+        mail to: user.email, subject: "あなたの登録地域で危険情報が投稿されました"
+      rescue => e
+        logger.error e
+      end 
     end
   end
-
-
-
 end
