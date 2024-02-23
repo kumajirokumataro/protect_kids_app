@@ -3,6 +3,7 @@ RSpec.describe 'Ajaxによるコメント機能', type: :system do
   let(:area) { Area.find_by(name: "徳丸") }
   let!(:user) { FactoryBot.create(:user) }
   let!(:post) { FactoryBot.create(:post, user: user, area: area) }
+  
   describe 'コメント登録機能' do
     before do
       visit new_session_path

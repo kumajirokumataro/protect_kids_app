@@ -53,7 +53,7 @@ group :development, :test do
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
   gem 'spring'
-  gem 'rspec-rails'
+  gem "rspec-rails", "~> 4.0.1"
   gem 'spring-commands-rspec'
   gem 'factory_bot_rails'
   gem 'launchy'
